@@ -4,10 +4,11 @@ import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
-const Login = () => {
+const Cadastro = () => {
 
     const navigate = useNavigate();
-    const {login, user, signed} = useContext(AuthContext);
+    const {signUp, user, signed} = useContext(AuthContext);
+
 
     return (
     <Formik
@@ -20,8 +21,8 @@ const Login = () => {
         })}
        onSubmit={async (values) => {
         try {
-            const res = await login(values.email, values.senha);   
-            navigate("/home/usurio");
+            const res = await signUp(values.email, values.senha);   
+            navigate("/home/login");
         } catch (error) {
             console.log(error);
         }
@@ -48,4 +49,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Cadastro;
