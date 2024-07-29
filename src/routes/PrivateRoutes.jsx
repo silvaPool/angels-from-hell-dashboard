@@ -1,5 +1,5 @@
 import HomeUsuario from "../components/HomeUsuario";
-import AuthGuard from "./AuthGuard";
+import AuthGuard from "../utils/AuthGuard";
 
 const PrivateRoutes = [
     {
