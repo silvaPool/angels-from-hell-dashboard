@@ -20,12 +20,13 @@ const Cadastro = () => {
            .required('A senha é obrigatória!'),        
         })}
        onSubmit={async (values) => {
-        try {
             const res = await signUp(values.email, values.senha);   
-            navigate("/home/login");
-        } catch (error) {
-            console.log(error);
-        }
+            if (res.user) {
+              alert("Conta cadastrada com sucesso");
+            } else {
+              alert("Ocorreu um erro, tente com um email diferente")
+            }
+       
        }}
      >
         {formik => (
