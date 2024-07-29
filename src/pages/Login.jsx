@@ -29,17 +29,14 @@ const Login = () => {
      >
         {formik => (
         <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="firstName">First Name</label>
-            <Field name="firstName" type="text" />
-            <ErrorMessage name="firstName" />
-
-            <label htmlFor="lastName">Last Name</label>
-            <Field name="lastName" type="text" />
-            <ErrorMessage name="lastName" />
 
             <label htmlFor="email">Email Address</label>
             <Field name="email" type="text" />
             <ErrorMessage name="email" />
+
+            <label htmlFor="senha">Senha</label>
+            <Field name="senha" type="password" />
+            <ErrorMessage name="senha" />
 
              <button type="submit">Submit</button>
            </form>

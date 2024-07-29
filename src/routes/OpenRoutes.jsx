@@ -1,10 +1,11 @@
 import Cadastro from "../pages/Cadastro";
+import Login from "../pages/Login";
 
 const OpenRoutes = [
     {
         path: "/",
         element: (
-            <Cadastro />
+            <Login />
         )
     }
 ];
