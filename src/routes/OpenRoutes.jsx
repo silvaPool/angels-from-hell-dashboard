@@ -4,9 +4,13 @@ import Login from "../pages/Login";
 const OpenRoutes = [
     {
         path: "/",
-        element: (
-            <Login />
-        )
+        element: <Login />,
+        children: [
+            {
+                path: "/auth/cadastro",
+                element: <Cadastro />,
+            },
+        ]
     }
 ];
 
