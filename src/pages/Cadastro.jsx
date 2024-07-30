@@ -31,18 +31,24 @@ const Cadastro = () => {
       >
         {(formik) => (
           <form onSubmit={formik.handleSubmit}>
-
             <div className="logo-form">Cadastro</div>
 
             <label htmlFor="email">Email Address</label>
-            <Field name="email" type="text" />
+            <Field name="email" type="text" className="field" />
             <ErrorMessage name="email" />
 
             <label htmlFor="senha">Senha</label>
-            <Field name="senha" type="password" />
+            <Field name="senha" type="password" className="field" />
             <ErrorMessage name="senha" />
 
-            <button type="submit">Submit</button>
+            <button type="submit" className="button-form">
+              Submit
+            </button>
+
+            <p class="signup-link">
+            Has registration?
+              <a class="signup-link link" onClick={() => navigate("/")}> Return Login</a>
+            </p>
           </form>
         )}
       </Formik>
