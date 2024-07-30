@@ -4,8 +4,19 @@
     box-sizing: border-box;
 }
 
+.form-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FF512F; 
+    background: -webkit-linear-gradient(to right, #F09819, #FF512F); 
+    background: linear-gradient(to right, #F09819, #FF512F); 
+    
+}
+
 form {
-    border: 1px solid green;
     max-width: 400px;
     width: 500px;
     display: flex;
@@ -84,4 +95,5 @@ label {
 
 .link:hover {
     text-decoration: underline;
+    cursor: pointer;
 }

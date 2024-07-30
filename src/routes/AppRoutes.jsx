@@ -4,7 +4,7 @@ import PrivateRoutes from "./PrivateRoutes";
 
 function Routes() {
     
-    const router = createBrowserRouter([...OpenRoutes, ...PrivateRoutes])
+    const router = createBrowserRouter([...OpenRoutes, ...PrivateRoutes]);
 
     return (<RouterProvider router={router} />)
 }

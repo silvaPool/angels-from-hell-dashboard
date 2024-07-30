@@ -1,61 +1,63 @@
-import React, { useContext } from 'react';
-import { ErrorMessage, Field, Formik, useFormik } from 'formik';
-import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import React, { useContext } from "react";
+import { ErrorMessage, Field, Formik, useFormik } from "formik";
+import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { login, user, signed } = useContext(AuthContext);
 
-    const navigate = useNavigate();
-    const {login, user, signed} = useContext(AuthContext);
-
-    return (
-      <div style={{border: '1px solid blue', height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-    <Formik 
-       initialValues={{email: '', senha: '' }}
-       validationSchema={Yup.object({
-         email: Yup.string().email('Invalid email address').required('Required'),
-         senha: Yup.string()
-           .min(5, 'A senha deve ter mais de 8 digitos')
-           .required('A senha é obrigatória!'),        
+  return (
+    <div className="form-container">
+      <Formik
+        initialValues={{ email: "", senha: "" }}
+        validationSchema={Yup.object({
+          email: Yup.string()
+            .email("Invalid email address")
+            .required("Required"),
+          senha: Yup.string()
+            .min(5, "A senha deve ter mais de 8 digitos")
+            .required("A senha é obrigatória!"),
         })}
-       onSubmit={async (values) => {
-        try {
-            const res = await login(values.email, values.senha);   
+        onSubmit={async (values) => {
+          try {
+            const res = await login(values.email, values.senha);
             navigate("/home/usurio");
-        } catch (error) {
+          } catch (error) {
             console.log(error);
-        }
-       }}
-     >
-        {formik => (
-        <form onSubmit={formik.handleSubmit}>
+          }
+        }}
+      >
+        {(formik) => (
+          <form onSubmit={formik.handleSubmit}>
+            <div className="logo-form">Login</div>
 
-
-         <div className='logo-form'>
-            Login
-         </div>
-
-            <label htmlFor="email" className='email'>Email Address</label>
-            <Field name="email" type="text" className='field' />
+            <label htmlFor="email" className="email">
+              Email Address
+            </label>
+            <Field name="email" type="text" className="field" />
             <ErrorMessage name="email" />
 
             <label htmlFor="senha">Senha</label>
-            <Field name="senha" type="password" className='field' />
+            <Field name="senha" type="password" className="field" />
             <ErrorMessage name="senha" />
 
-             <button type="submit" className='button-form'>Submit</button>
+            <button type="submit" className="button-form">
+              Submit
+            </button>
 
-             <p class="signup-link">
+            <p class="signup-link">
               Don't have an account?
-              <a href="#" class="signup-link link"> Sign up now</a>
-             </p>
-          
+              <a class="signup-link link" onClick={() => navigate("/cadastro")}> Sign up now</a>
+             
+            </p>
           </form>
-          )}
-        </Formik>
-        </div>
-    );
+        )}
+      </Formik>
+    </div>
+  );
 };
 
 export default Login;
