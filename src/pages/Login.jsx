@@ -10,7 +10,8 @@ const Login = () => {
     const {login, user, signed} = useContext(AuthContext);
 
     return (
-    <Formik
+      <div style={{border: '1px solid blue', height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    <Formik 
        initialValues={{email: '', senha: '' }}
        validationSchema={Yup.object({
          email: Yup.string().email('Invalid email address').required('Required'),
@@ -30,18 +31,30 @@ const Login = () => {
         {formik => (
         <form onSubmit={formik.handleSubmit}>
 
-            <label htmlFor="email">Email Address</label>
-            <Field name="email" type="text" />
+
+         <div className='logo-form'>
+            Login
+         </div>
+
+            <label htmlFor="email" className='email'>Email Address</label>
+            <Field name="email" type="text" className='field' />
             <ErrorMessage name="email" />
 
             <label htmlFor="senha">Senha</label>
-            <Field name="senha" type="password" />
+            <Field name="senha" type="password" className='field' />
             <ErrorMessage name="senha" />
 
-             <button type="submit">Submit</button>
-           </form>
+             <button type="submit" className='button-form'>Submit</button>
+
+             <p class="signup-link">
+              Don't have an account?
+              <a href="#" class="signup-link link"> Sign up now</a>
+             </p>
+          
+          </form>
           )}
         </Formik>
+        </div>
     );
 };
 
