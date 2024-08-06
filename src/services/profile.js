@@ -8,5 +8,14 @@ export async function setProfileData(profile, uid) {
     } catch (e) {
         console.error("Error adding document: ", e);
     }
-    
+}
+
+export async function updateProfile(profile, uid) {
+    try {
+        const profileUserRef = doc(db, "profile", uid);
+        const res = await updateDoc(profileUserRef, profile);
+
+    } catch (e) {
+        console.error("Error adding document: ", e);
+    }
 }
