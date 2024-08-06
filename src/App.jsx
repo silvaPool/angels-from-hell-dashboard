@@ -1,4 +1,5 @@
 import './App.css'
+import HomeUsuario from './components/HomeUsuario'
 import { Auth } from './context/AuthContext'
 import Cadastro from './pages/Cadastro'
 import Login from './pages/Login'
@@ -10,9 +11,11 @@ function App() {
   return (
     <>
 
-      <Auth>
+      {/* <Auth>
         <Routes />
-      </Auth>
+      </Auth> */}
+
+      <HomeUsuario />
       
     </>
   )
