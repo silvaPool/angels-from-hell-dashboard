@@ -50,8 +50,16 @@ export const Auth = ({children}) => {
         }
     }
 
+    function logout() {
+        
+        localStorage.removeItem("@AccessToken");
+        localStorage.removeItem("@User");
+
+        setUser(null);
+    }
+
     return (
-        <AuthContext.Provider value={{login, signUp}}>
+        <AuthContext.Provider value={{login, signUp, logout}}>
             {children}
         </AuthContext.Provider>
     );
