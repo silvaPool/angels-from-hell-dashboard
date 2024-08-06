@@ -19,3 +19,9 @@ export async function updateProfile(profile, uid) {
         console.error("Error adding document: ", e);
     }
 }
+
+export async function getProfile(uid) {
+    const profileUserRef = doc(db, "profile", uid);
+    const docSnap = await getDoc(profileUserRef);
+    return docSnap.data();
+}
