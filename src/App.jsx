@@ -19,9 +19,9 @@ function App() {
 
       {/* <HomeUsuario /> */}
 
-      <Arte />
+      {/* <Arte /> */}
 
-      {/* <PaginaArtista /> */}
+      <PaginaArtista />
       
     </>
   )
