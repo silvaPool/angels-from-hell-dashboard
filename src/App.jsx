@@ -1,4 +1,5 @@
 import './App.css'
+import Arte from './components/Arte'
 import HomeUsuario from './components/HomeUsuario'
 import { Auth } from './context/AuthContext'
 import Cadastro from './pages/Cadastro'
@@ -15,7 +16,9 @@ function App() {
         <Routes />
       </Auth> */}
 
-      <HomeUsuario />
+      {/* <HomeUsuario /> */}
+
+      <Arte />
       
     </>
   )
