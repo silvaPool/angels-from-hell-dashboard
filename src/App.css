@@ -157,6 +157,16 @@ label {
     -ms-flex-pack: center;
     justify-content: center;
   }
+
+.icon-1 {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.icon-2 {
+    align-self: flex-end;
+    margin-bottom: 10px;
+  }
   
   .book:hover .cover {
     -webkit-transition: all 0.5s;
@@ -170,3 +180,4 @@ label {
     font-size: 20px;
     font-weight: bolder;
   }
+
