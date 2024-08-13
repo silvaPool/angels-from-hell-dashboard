@@ -25,11 +25,14 @@ const Login = () => {
           try {
             const res = await login(values.email, values.senha);
 
-            console.log(res);
-            
-            navigate("/home/usuario");
+            if (res.user) {
+              if (res.user.email === 'admin@admin.com') {
+                navigate("/admin");
+              }   else {
+                navigate("/home/usuario");
+              }
+            }
           
-            
           } catch (error) {
             console.log(error);
           }
