@@ -8,8 +8,8 @@ function PaginaArtista() {
     <Box sx={{ border: "1px solid black", padding: "15px" }}>
       <img src={Morcego} alt="" />
       <img src={Witch} alt="" />
-      <Stack sx={{ border: "1px solid red", width: "70vw", margin: "0 auto" }}>
-        <Typography sx={{ textAlign: "center", fontFamily: "Cormorant Garamond" }}>Edgar A. Poe</Typography>
+      <Stack sx={{ width: "70vw", margin: "0 auto" }}>
+        <Typography sx={{ textAlign: "center", fontFamily: "Cormorant Garamond", fontSize: '2rem' }}>Edgar A. Poe</Typography>
         <Typography class="text">
           Edgar Allan Poe’s stature as a major figure in world literature is
           primarily based on his ingenious and profound short stories, poems,
@@ -31,7 +31,6 @@ function PaginaArtista() {
           spacing={2}
           sx={{
             marginTop: "15px",
-            border: "1px solid red",
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-around",
