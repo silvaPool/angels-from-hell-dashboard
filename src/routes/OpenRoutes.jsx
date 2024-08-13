@@ -1,15 +1,24 @@
 import Cadastro from "../pages/Cadastro";
 import Login from "../pages/Login";
+import MainGuard from "../utils/MainGuard";
 
 const OpenRoutes = [
+
     {
         path: "/",
-        element: <Login />
-    },
-    {
-        path: "/cadastro",
-        element: <Cadastro />
+        element: (
+            <MainGuard>
+                <Login />
+            </MainGuard>
+        ),
+        children: [
+            {
+                path: "/cadastro",
+                element: <Cadastro />
+            },
+        ]
     }
+   
 ];
 
 export default OpenRoutes;
