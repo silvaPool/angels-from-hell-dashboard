@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import Arte from './Arte';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -36,7 +37,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <Box>
+    <AppBar position="static" sx={{background: '#FF4500'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -58,7 +60,7 @@ function ResponsiveAppBar() {
             LOGO
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1,  display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -157,6 +159,8 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
+              <Arte />
+    </Box>
   );
 }
 export default ResponsiveAppBar;

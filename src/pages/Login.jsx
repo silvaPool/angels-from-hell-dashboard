@@ -24,7 +24,7 @@ const Login = () => {
         onSubmit={async (values) => {
           try {
             const res = await login(values.email, values.senha);
-            navigate("/home/usurio");
+            navigate("/home/usuario");
           } catch (error) {
             console.log(error);
           }

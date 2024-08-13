@@ -6,7 +6,7 @@ function Arte() {
   return (
     <Box sx={{ padding: "30px" }}>
       <div class="book">
-        <p>Hello</p>
+        <p>Explore</p>
         <div class="cover">
           <img src={Ghost} alt="icon ghost" className="icon-1" />
           <p>Edgar A. Poe</p>

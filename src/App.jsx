@@ -13,15 +13,15 @@ function App() {
   return (
     <>
 
-      {/* <Auth>
+      <Auth>
         <Routes />
-      </Auth> */}
+      </Auth>
 
       {/* <HomeUsuario /> */}
 
       {/* <Arte /> */}
 
-      <PaginaArtista />
+      {/* <PaginaArtista /> */}
       
     </>
   )
