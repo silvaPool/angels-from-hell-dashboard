@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import Arte from "../components/Arte";
 import HomeUsuario from "../components/HomeUsuario";
 import PaginaArtista from "../components/PaginaArtista";
@@ -8,6 +9,7 @@ const PrivateRoutes = [
         path: "/home/usuario",
         element: (
             <AuthGuard>
+                {/* <Navigate to="principal" replace /> */}
              <HomeUsuario />,
             </AuthGuard>
         ),
