@@ -18,7 +18,7 @@ import { Fragment } from "react";
 function Arte({ item }) {
   return (
     <Box sx={{ padding: "30px" }}>
-      <Grid container spacing={4}>
+      <Grid container spacing={1} gap={"15px"}>
         {cards && cards.length > 0 ? (
           cards.map((item, index) => (
             <Fragment key={index}>
