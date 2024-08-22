@@ -9,7 +9,7 @@ const PrivateRoutes = [
         path: "/home/usuario",
         element: (
             <AuthGuard>
-                {/* <Navigate to="autores" replace /> */}
+                <Navigate to="autores" replace />
              <HomeUsuario />,
             </AuthGuard>
         ),
