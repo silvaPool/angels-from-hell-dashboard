@@ -1,18 +1,33 @@
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-function AuthGuard({children}) {
-    const {signed} = useContext(AuthContext);
-    const navigate = useNavigate();
+function AuthGuard({ children }) {
+  const { signed, loading, user } = useContext(AuthContext);
 
-    useEffect(() => {
-        if(!signed) {
-            navigate("/login");
-        }
-    }, [signed, navigate]);
+  // if (loading) {
+  //   return <div>Loading...</div>
+  // }
 
-    return children;
+  // if (!signed) {
+  //   return <Navigate to="/" replace />;
+  // }
+
+  // if (user.email === "admin@admin.com") {
+  //   return <Navigate to="/admin/home" replace />;
+  // }
+
+  // return children;
+
+  return !loading ? (
+    !signed ? (
+      <Navigate to={"/"} />
+    ) : user.email === "admin@admin.com" ? (
+      <Navigate to={"/admin/home"} />
+    ) : (
+      children
+    )
+  ) : undefined;
 }
 
 export default AuthGuard;

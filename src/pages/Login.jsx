@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
-
 const Login = () => {
   const navigate = useNavigate();
   const { login, user, signed } = useContext(AuthContext);
@@ -18,21 +17,21 @@ const Login = () => {
             .email("Invalid email address")
             .required("Required"),
           senha: Yup.string()
-            .min(5, "A senha deve ter mais de 8 digitos")
+            .min(8, "A senha deve ter mais de 8 digitos")
             .required("A senha é obrigatória!"),
         })}
         onSubmit={async (values) => {
           try {
             const res = await login(values.email, values.senha);
 
+        
             if (res.user) {
-              if (res.user.email === 'admin@admin.com') {
+              if (res.user.email === "admin@admin.com") {
                 navigate("/admin");
-              }   else {
+              } else {
                 navigate("/home/usuario");
               }
             }
-          
           } catch (error) {
             console.log(error);
           }
@@ -58,8 +57,10 @@ const Login = () => {
 
             <p class="signup-link">
               Don't have an account?
-              <a class="signup-link link" onClick={() => navigate("/cadastro")}> Sign up now</a>
-             
+              <a class="signup-link link" onClick={() => navigate("/cadastro")}>
+                {" "}
+                Sign up now
+              </a>
             </p>
           </form>
         )}

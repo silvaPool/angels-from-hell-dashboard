@@ -8,7 +8,7 @@ function AdminGuard({children}) {
     const navigate = useNavigate();
 
     return !loading ?
-    (!signed ? (<Navigate to={"/login"} />) : (user.email === 'admin@admin.com'? children : navigate("/home/usuario"))) : undefined;
+    (!signed ? (<Navigate to={"/"} />) : (user.email === 'admin@admin.com'? children : navigate("/home/usuario"))) : undefined;
 }
 
 export default AdminGuard;

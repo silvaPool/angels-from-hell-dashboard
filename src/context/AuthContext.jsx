@@ -11,6 +11,8 @@ export const Auth = ({children}) => {
 
     const [user, setUser] = useState(null);
 
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         const userStorage = window.localStorage.getItem("@User");
 
@@ -19,6 +21,8 @@ export const Auth = ({children}) => {
         } else {
             setUser(null);
         }
+
+        setLoading(false);
     }, []);
 
     async function login(email, senha) {
@@ -29,12 +33,10 @@ export const Auth = ({children}) => {
             localStorage.setItem("@AccessToken", response.user.accessToken);
             localStorage.setItem("@User", JSON.stringify(response.user));
 
-            console.log(response);
-
-            return true;
+            return {success: true, user: response.user};
 
         } catch (error) {
-            return error.message;
+            return {success: false, message: error.message};
         }
     }
 
@@ -59,7 +61,7 @@ export const Auth = ({children}) => {
     }
 
     return (
-        <AuthContext.Provider value={{login, signUp, logout}}>
+        <AuthContext.Provider value={{signed: !!user ,user, login, signUp, logout, loading}}>
             {children}
         </AuthContext.Provider>
     );
