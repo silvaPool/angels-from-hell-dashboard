@@ -50,10 +50,30 @@ function ResponsiveDrawer(props) {
   };
 
   const drawer = (
-    <div>
+    <div
+      style={{
+        background: "black",
+        color: "white",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
       <Toolbar />
-      <Divider />
-      <List>
+      <Divider sx={{ border: "1px solid white", width: "100%" }} />
+      <List
+        sx={{
+          background: "black",
+          width: "100%",
+          height: "100%",
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-around',
+          alignItems: 'center'
+        }}
+      >
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
@@ -65,8 +85,8 @@ function ResponsiveDrawer(props) {
           </ListItem>
         ))}
       </List>
-      <Divider />
-      <button type="submit" className="button-form" onClick={logoutDrawer}>
+      <Divider sx={{ border: "1px solid white", width: "100%" }} />
+      <button type="submit" className="button-form button-logout" onClick={logoutDrawer}>
         Logout
       </button>
     </div>
@@ -77,13 +97,14 @@ function ResponsiveDrawer(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", background: "red" }}>
       <CssBaseline />
       <AppBar
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          backgroundColor: "#FF4500",
         }}
       >
         <Toolbar>

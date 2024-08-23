@@ -22,7 +22,7 @@ function Arte({ item }) {
         {cards && cards.length > 0 ? (
           cards.map((item, index) => (
             <Fragment key={index}>
-              <div class="book">
+              <div class="book" style={{ marginBottom: "10px" }}>
                 <p>Explore</p>
                 <div class="cover">
                   <img src={Ghost} alt="icon ghost" className="icon-1" />
