@@ -54,21 +54,21 @@ const cards = [
         id: 11,
         nomeArtista: "Edgar A. Poe",
         nomeLivro: "O Corvo",
-        googleLink: "",
+        googleLink: "https://www.amazon.com.br/corvo-Edgar-Allan-Poe/dp/8535931686",
     },
     {
         type: "livro",
         id: 12,
         nomeArtista: "Edgar A. Poe",
         nomeLivro: "O Gato Preto",
-        googleLink: "",
+        googleLink: "https://www.amazon.com.br/Gato-Preto-Edgar-Allan-Poe/dp/850606144X",
     },
     {
         type: "livro",
         id: 13,
         nomeArtista: "Edgar A. Poe",
         nomeLivro: "O coração revelador",
-        googleLink: "",
+        googleLink: "https://www.amazon.com.br/Cora%C3%A7%C3%A3o-Revelador-Edgar-Allan-Poe/dp/8506066085",
     },
     {
         type: "livro",
@@ -82,7 +82,7 @@ const cards = [
         id: 14,
         nomeArtista: "Stephen King",
         nomeLivro: "O Cemitério",
-        googleLink: "",
+        googleLink: "https://www.amazon.com.br/cemit%C3%A9rio-Stephen-King/dp/8581050395",
     }
 ]
 

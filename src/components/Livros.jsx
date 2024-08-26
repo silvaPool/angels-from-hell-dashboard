@@ -12,10 +12,6 @@ function Livros() {
         {livros && livros.length > 0 ? (
           livros.map((item, index) => (
             <Fragment key={index}>
-              {/* <div>
-                    {item.nomeLivro}
-                    {item.nomeArtista}
-                </div> */}
               <div class="card">
                 <div class="image"></div>
                 <div class="content">

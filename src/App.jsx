@@ -1,5 +1,6 @@
 import "./App.css";
 import Arte from "./components/Arte";
+import Casas from "./components/Casas";
 import HomeUsuario from "./components/HomeUsuario";
 import Livros from "./components/Livros";
 import PaginaArtista from "./components/PaginaArtista";
@@ -15,13 +16,15 @@ function App() {
         <Routes />
       </Auth> */}
 
+      <Casas />
+
       {/* <HomeUsuario /> */}
 
       {/* <Arte /> */}
 
       {/* <PaginaArtista /> */}
 
-      <Livros />
+      {/* <Livros /> */}
     </>
   );
 }
