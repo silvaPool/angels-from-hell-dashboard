@@ -19,7 +19,8 @@ import Typography from "@mui/material/Typography";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import Arte from "./Arte";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Stack } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -27,6 +28,7 @@ function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
+  const navigate = useNavigate();
 
   const { logout } = useContext(AuthContext);
 
@@ -68,13 +70,13 @@ function ResponsiveDrawer(props) {
           background: "#292929",
           width: "100%",
           height: "100%",
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-around',
-          alignItems: 'center'
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-around",
+          alignItems: "center",
         }}
       >
-        {["Home", "Livros", "Autores", "Casas"].map((text, index) => (
+        {/* {["Home", "Livros", "Autores", "Casas"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -83,10 +85,21 @@ function ResponsiveDrawer(props) {
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
-        ))}
+        ))} */}
+
+        <Stack spacing={2}>
+          <Link to={"autores"}>Home</Link>
+          <Link to={"livros"}>Livros</Link>
+          <Link to={"historias"}>Histórias</Link>
+          <Link to={"casas"}>Casas</Link>
+        </Stack>
       </List>
       <Divider sx={{ border: "1px solid black", width: "100%" }} />
-      <button type="submit" className="button-form button-logout" onClick={logoutDrawer}>
+      <button
+        type="submit"
+        className="button-form button-logout"
+        onClick={logoutDrawer}
+      >
         Logout
       </button>
     </div>
@@ -124,7 +137,7 @@ function ResponsiveDrawer(props) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 }  }}
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}

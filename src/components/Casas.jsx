@@ -1,7 +1,7 @@
 function Casas() {
     return (
         <div>
-            sdsddsdsd
+            Aqui vão ficar as casas de horror!
         </div>
     )
 }

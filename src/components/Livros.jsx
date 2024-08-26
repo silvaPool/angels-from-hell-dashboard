@@ -3,7 +3,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import cardsLivros from "../services/data";
 import { Fragment } from "react";
 
-function Livros() {
+function Livros({item}) {
   const livros = cardsLivros.filter((item) => item.type === "livro");
 
   return (

@@ -12,11 +12,11 @@ import Routes from "./routes/AppRoutes";
 function App() {
   return (
     <>
-      {/* <Auth>
+      <Auth>
         <Routes />
-      </Auth> */}
+      </Auth>
 
-      <Casas />
+      {/* <Casas /> */}
 
       {/* <HomeUsuario /> */}
 
