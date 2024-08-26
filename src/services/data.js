@@ -54,18 +54,35 @@ const cards = [
         id: 11,
         nomeArtista: "Edgar A. Poe",
         nomeLivro: "O Corvo",
+        googleLink: "",
     },
     {
         type: "livro",
         id: 12,
-        nomeArtista: "Exemplo 2",
-        nomeLivro: "Bla",
+        nomeArtista: "Edgar A. Poe",
+        nomeLivro: "O Gato Preto",
+        googleLink: "",
     },
     {
         type: "livro",
         id: 13,
-        nomeArtista: "Exemplo 3",
-        nomeLivro: "blabla",
+        nomeArtista: "Edgar A. Poe",
+        nomeLivro: "O coração revelador",
+        googleLink: "",
+    },
+    {
+        type: "livro",
+        id: 14,
+        nomeArtista: "Stephen King",
+        nomeLivro: "It",
+        googleLink: "",
+    },
+    {
+        type: "livro",
+        id: 14,
+        nomeArtista: "Stephen King",
+        nomeLivro: "O Cemitério",
+        googleLink: "",
     }
 ]
 
