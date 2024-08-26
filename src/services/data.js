@@ -75,7 +75,7 @@ const cards = [
         id: 14,
         nomeArtista: "Stephen King",
         nomeLivro: "It",
-        googleLink: "",
+        googleLink: "https://www.amazon.com.br/coisa-Stephen-King/dp/8560280944",
     },
     {
         type: "livro",

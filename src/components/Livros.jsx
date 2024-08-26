@@ -25,7 +25,7 @@ function Livros() {
 
                   <p class="desc">{item.nomeArtista}</p>
 
-                  <a class="action" href="#">
+                  <a class="action" href={item.googleLink} target="_blank">
                     Find out more
                     <span aria-hidden="true">→</span>
                   </a>
