@@ -4,6 +4,7 @@ import Casas from "./components/Casas";
 import HomeUsuario from "./components/HomeUsuario";
 import Livros from "./components/Livros";
 import PaginaArtista from "./components/PaginaArtista";
+import Welcome from "./components/Welcome";
 import { Auth } from "./context/AuthContext";
 import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
@@ -15,6 +16,8 @@ function App() {
       <Auth>
         <Routes />
       </Auth>
+
+      {/* <Welcome /> */}
 
       {/* <Casas /> */}
 
