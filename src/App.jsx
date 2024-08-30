@@ -8,6 +8,7 @@ import Welcome from "./components/Welcome";
 import { Auth } from "./context/AuthContext";
 import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
+import Perfil from "./pages/Perfil";
 import Routes from "./routes/AppRoutes";
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       <Auth>
         <Routes />
       </Auth>
+
+      {/* <Perfil /> */}
 
       {/* <Welcome /> */}
 
