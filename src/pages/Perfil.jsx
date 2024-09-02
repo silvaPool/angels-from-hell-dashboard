@@ -3,11 +3,13 @@ import { ErrorMessage, Field, Formik, useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { setPhoto } from "../services/profile";
 
 const Perfil = () => {
-  const { login, user, signed, updateProfileUser, profile } = useContext(AuthContext);
+  const { login, user, signed, updateProfileUser, profile } =
+    useContext(AuthContext);
 
-  const [avatar, setAvatar] = useState('');
+  const [avatar, setAvatar] = useState("");
   const [fileData, setFileData] = useState();
 
   function handleAvatar(e) {
@@ -16,7 +18,14 @@ const Perfil = () => {
     setAvatar(URL.createObjectURL(fileUser));
   }
 
-  
+  async function uploadFileImage() {
+    try {
+      const url = await setPhoto(fileData, user.uid);
+      setAvatar(url);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className="form-container">
