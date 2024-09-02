@@ -24,7 +24,6 @@ const Login = () => {
           try {
             const res = await login(values.email, values.senha);
 
-        
             if (res.user) {
               if (res.user.email === "admin@admin.com") {
                 navigate("/admin");

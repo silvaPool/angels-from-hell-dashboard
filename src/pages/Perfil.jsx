@@ -1,16 +1,36 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ErrorMessage, Field, Formik, useFormik } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { setPhoto } from "../services/profile";
 
 const Perfil = () => {
+  const { state } = useLocation();
+
   const { login, user, signed, updateProfileUser, profile } =
     useContext(AuthContext);
 
   const [avatar, setAvatar] = useState("");
   const [fileData, setFileData] = useState();
+  const [profileData, setProfileData] = useState();
+  const [isAdm, setIsAdm] = useState(false);
+
+  useEffect(() => {
+    if (state) {
+      setProfileData(state);
+      setIsAdm(true);
+    }
+    if (profile) {
+      setProfileData(profile);
+    }
+  }, [state, profile]);
+
+  useEffect(() => {
+    if (profile && profile.urlImage) {
+      setAvatar(profile.urlImage);
+    }
+  }, [profile]);
 
   function handleAvatar(e) {
     const fileUser = e.target.files[0];
