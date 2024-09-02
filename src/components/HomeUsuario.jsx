@@ -14,7 +14,9 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Welcome from "./Welcome";
 import StyledBoxHome from "./StyledBoxHome";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -22,6 +24,10 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 function HomeUsuario() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const { logout } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,6 +43,21 @@ function HomeUsuario() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+//   const rotas = [
+//     {
+//         nome: 'perfil',
+//         destino: 'perfil',
+//     },
+//     {
+//         nome: 'historias',
+//         destino: 'historias',
+//     },
+//     {
+//         nome: 'Sair',
+//         onClick: logout,
+//     }
+// ]
 
   return (
     <>
@@ -148,13 +169,14 @@ function HomeUsuario() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                {/* {rotas.map((rotas) => (
+                  <MenuItem key={rotas} onClick={handleCloseUserMenu}>
                     <Typography sx={{ textAlign: "center" }}>
-                      {setting}
+                      {rotas}
                     </Typography>
                   </MenuItem>
-                ))}
+                ))} */}
+                <button onClick={() => navigate("/perfil")}>Profile</button>
               </Menu>
             </Box>
           </Toolbar>
