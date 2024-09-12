@@ -78,6 +78,7 @@ export const Auth = ({ children }) => {
     setUser(null);
   }
 
+
   async function updateProfileUser(data) {
     try {
       await updateProfile(data, user.uid);
@@ -92,7 +93,16 @@ export const Auth = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ signed: !!user, user, login, signUp, logout, loading, profile, updateProfileUser }}
+      value={{
+        signed: !!user,
+        user,
+        login,
+        signUp,
+        logout,
+        loading,
+        profile,
+        updateProfileUser,
+      }}
     >
       {children}
     </AuthContext.Provider>

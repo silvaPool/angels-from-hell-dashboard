@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { setPhoto } from "../services/profile";
+import { Avatar, Button, TextField } from "@mui/material";
 
 const Perfil = () => {
   const { state } = useLocation();
@@ -84,8 +85,12 @@ const Perfil = () => {
         }}
       >
         {(formik) => (
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={formik.handleSubmit} style={{height: '100vh', width: '3000px'}}>
             <div className="logo-form">Login</div>
+
+            <Avatar alt="Remy Sharp" src={avatar} sx={{ height: 120, width: 120, marginTop: '200px' }} />
+            <TextField type="file" name="foto" id="foto" onChange={(e) => handleAvatar(e)} />
+              <Button onClick={uploadFileImage}>Atualizar foto</Button>
 
             <label htmlFor="nome" className="nome">
               Nome
