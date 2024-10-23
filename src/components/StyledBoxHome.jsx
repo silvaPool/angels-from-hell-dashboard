@@ -3,11 +3,11 @@ import { styled } from "styled-components";
 
 const StyledBoxHome = styled(Box)`
   && {
-    padding: 30px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: center;    
     background: #232526; 
     background: -webkit-linear-gradient(
       to right,

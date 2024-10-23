@@ -44,24 +44,24 @@ function HomeUsuario() {
     setAnchorElUser(null);
   };
 
-//   const rotas = [
-//     {
-//         nome: 'perfil',
-//         destino: 'perfil',
-//     },
-//     {
-//         nome: 'historias',
-//         destino: 'historias',
-//     },
-//     {
-//         nome: 'Sair',
-//         onClick: logout,
-//     }
-// ]
+  //   const rotas = [
+  //     {
+  //         nome: 'perfil',
+  //         destino: 'perfil',
+  //     },
+  //     {
+  //         nome: 'historias',
+  //         destino: 'historias',
+  //     },
+  //     {
+  //         nome: 'Sair',
+  //         onClick: logout,
+  //     }
+  // ]
 
   return (
     <>
-      <AppBar position="static" sx={{background: 'black'}}>
+      <AppBar position="static" sx={{ background: "black" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -184,11 +184,7 @@ function HomeUsuario() {
       </AppBar>
 
       <StyledBoxHome>
-        <Welcome />
-
-       
-          <Outlet />
-        
+        <Outlet />
       </StyledBoxHome>
     </>
   );

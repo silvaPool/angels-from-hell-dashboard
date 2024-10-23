@@ -22,6 +22,10 @@ const PrivateRoutes = [
                 element: <Arte />       
             },
             {
+                path: "autores/:nomeArtista",
+                element: <PaginaArtista />       
+            },
+            {
                 path: "historias",
                 element: <PaginaArtista /> 
             },

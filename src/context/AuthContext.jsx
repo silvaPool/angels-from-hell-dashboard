@@ -6,6 +6,12 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { getProfile, updateProfile } from "../services/profile";
+import { jwtDecode } from "jwt-decode";
+
+// function toTimeStamp(strDate) {
+//   var datum = Date.parse(strDate);
+//   return datum/1000;
+// }
 
 export const AuthContext = createContext({});
 
@@ -17,6 +23,25 @@ export const Auth = ({ children }) => {
   const [profile, setProfile] = useState(null);
 
   const [loading, setLoading] = useState(true);
+
+
+  // useEffect(() => {
+  //   const storagedUser = window.localStorage.getItem('@App:user');
+  //   const token = window.localStorage.getItem('@App:token');
+
+  //   if (token) {
+  //     var decoded = jwtDecode(token);
+  //     const newDate = new Date();
+  //     const timeStamp = toTimeStamp(newDate);
+  //     if (timeStamp > decoded.exp) {
+  //       logout();
+  //       setLoading(false);
+  //     } else {
+
+  //     }
+  //   }
+
+  // }, []);
 
   useEffect(() => {
     const userStorage = window.localStorage.getItem("@User");
